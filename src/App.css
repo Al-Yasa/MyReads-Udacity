@@ -1,0 +1,140 @@
+@charset "utf-8";
+
+/**** General ****/
+* {
+}
+
+html {
+}
+
+body {
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* ====================== Restaurants Main Page ====================== */
+/**** Start App ****/
+.app {
+    display: flex;
+    height: 100vh;
+}
+
+/**** Start Side Content ****/
+.side-content {
+    width: 300px;
+    background: #333;
+    color: #fff;
+}
+
+.side-content .logo {
+    background-color: aquamarine;
+    height: 100px;
+}
+
+.side-content .logo h1 {
+    text-align: center;
+}
+
+.side-content .menu {
+    padding: 15px 0 15px 20px;
+}
+
+.side-content .menu h3 {
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+    color: #666;
+}
+
+.side-content .menu ul {
+
+}
+
+.side-content .menu ul li {
+    display: flex;
+}
+
+.side-content .menu ul li a {
+    padding: 10px 0 15px 5px;
+    width: 100%;
+    border-left: 5px solid transparent;
+    color: #fff;
+}
+
+.side-content .menu ul a:hover {
+    background-color: #fff;
+    border-left: 5px solid aquamarine;
+    color: #333;
+}
+
+/**** Start Main Content ****/
+.main-content {
+    width: 100%;
+    padding: 30px;
+    overflow: hidden;
+    overflow-y: scroll;
+}
+
+.main-content h2 {
+    color: #444;
+    font-weight: 200;
+    margin-bottom: 15px;
+}
+
+.main-content .bookShelf {
+    /* background: pink; */
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.main-content .bookShelf .book {
+    /* background: orangered; */
+    /* height: 180px; */
+    width: 140px;
+    margin: 0 10px 22px;
+}
+
+.main-content .bookShelf .book .book-top {
+    position: relative;
+}
+
+.main-content .bookShelf .book .book-top .book-cover {
+    /* box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23); */
+    /* background: #eee; */
+    width: 128px;
+    height: 193px;
+}
+
+.main-content .bookShelf .book .book-top .book-shelf-changer {
+    position: absolute;
+    right: 0;
+    bottom: -10px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: aquamarine;
+    background-image: url('./icons/arrow-drop-down.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 20px;
+    /* box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23); */
+}
+
+.main-content .bookShelf .book .book-top .book-shelf-changer select {
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.main-content .bookShelf .book .book-title {
+    font-size: 0.8em;
+    margin: 12px 0 3px;
+    color: #333;
+}
+
+.main-content .bookShelf .book .book-authors {
+    font-size: 0.75em;
+    color: #666;
+}
