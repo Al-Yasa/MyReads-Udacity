@@ -3,6 +3,7 @@ import * as BooksAPI from './BooksAPI'
 import { Route } from 'react-router-dom';
 import './App.css'
 import SideMenu from './components/SideMenu';
+import Loader from './components/Loader';
 import BookShelf from './components/BookShelf';
 
 class BooksApp extends React.PureComponent {
@@ -14,15 +15,27 @@ class BooksApp extends React.PureComponent {
     this.fetchBooks();
   }
 
+  showLoader = () => {
+    document.querySelector('.loader').style.display = 'flex';
+  }
+
+  hideLoader = () => {
+    document.querySelector('.loader').style.display = 'none';
+  }
+
   fetchBooks = () => {
     BooksAPI.getAll().then((books) => {
       this.setState({ books });
+      this.hideLoader();
       console.log(this.state.books);
     });
   }
 
   updateShelf = (book, shelf) =>  {
-    BooksAPI.update(book, shelf).then(() => this.fetchBooks());
+    this.showLoader();
+    BooksAPI.update(book, shelf).then(() => {
+      this.fetchBooks();
+    });
   }
 
   render() {
@@ -51,6 +64,7 @@ class BooksApp extends React.PureComponent {
               <h2>Search</h2>
             </React.Fragment>
           )} />
+          <Loader />
         </div>
       </div>
     )

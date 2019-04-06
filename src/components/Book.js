@@ -3,7 +3,7 @@ import React from 'react';
 const Book = (props) => (
     <div className="book">
         <div className="book-top">
-            <div className="book-cover" style={{ backgroundImage: `url(${props.book.imageLinks.thumbnail})` }}></div>
+            <div className="book-cover" style={{ backgroundImage: `url(${props.book.imageLinks.smallThumbnail})` }}></div>
             <div className="book-shelf-changer">
                 <select
                     onChange={e => {
