@@ -79,13 +79,14 @@ body {
 .main-content h2 {
     color: #444;
     font-weight: 200;
-    margin-bottom: 15px;
+    margin-bottom: 30px;
 }
 
 .main-content .bookShelf {
     /* background: pink; */
     display: flex;
     flex-wrap: wrap;
+    margin: 0 0 40px;
 }
 
 .main-content .bookShelf .book {
@@ -137,4 +138,27 @@ body {
 .main-content .bookShelf .book .book-authors {
     font-size: 0.75em;
     color: #666;
+    margin-bottom: 3px;
+}
+
+.main-content .bookShelf .empty {
+    font-size: 1em;
+    color: #555;
+    text-align: center;
+    width: 100%;
+    margin: 50px 0 0;
+}
+
+.main-content .bookShelf .empty:last-of-type {
+    font-size: 0.9em;
+    color: #777;
+    text-align: center;
+    width: 100%;
+    margin: 20px 0 0;
+}
+
+.main-content .bookShelf .empty:last-of-type a {
+    color: aquamarine;
+    font-weight: bold;
+    text-decoration: underline;
 }

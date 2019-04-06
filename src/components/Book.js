@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 const Book = (props) => (
     <div className="book">
@@ -19,7 +19,9 @@ const Book = (props) => (
             </div>
         </div>
         <div className="book-title">{props.book.title}</div>
-        <div className="book-authors">{props.book.authors}</div>
+        { props.book.authors.map((author, index) => (
+            <div key={index} className="book-authors">{author}</div>
+        ))}
     </div>
 )
 
