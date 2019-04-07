@@ -4,6 +4,10 @@ import EmptyMessage from './EmptyMessage';
 
 class BookShelf extends React.PureComponent {
 
+  componentDidMount() {
+    // console.log(this.props.books);
+  }
+
   updateShelf = (book, shelf) =>  {
     this.props.onUpdateShelf(book, shelf);
   }

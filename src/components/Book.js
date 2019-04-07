@@ -3,7 +3,11 @@ import React from 'react';
 const Book = (props) => (
     <div className="book">
         <div className="book-top">
-            <div className="book-cover" style={{ backgroundImage: `url(${props.book.imageLinks.smallThumbnail})` }}></div>
+            {props.book.imageLinks ? (
+                <div className="book-cover" style={{ backgroundImage: `url(${props.book.imageLinks.thumbnail})` }}></div>
+            ) : (
+                <div className="book-cover" style={{ backgroundImage: 'url(missingThumbnail.jpg)' }}></div>
+            )}
             <div className="book-shelf-changer">
                 <select
                     onChange={e => {
@@ -19,8 +23,9 @@ const Book = (props) => (
             </div>
         </div>
         <div className="book-title">{props.book.title}</div>
-        { props.book.authors.map((author, index) => (
-            <div key={index} className="book-authors">{author}</div>
+        {props.book.authors &&
+            props.book.authors.map((author, index) => (
+                <div key={index} className="book-authors">{author}</div>
         ))}
     </div>
 )

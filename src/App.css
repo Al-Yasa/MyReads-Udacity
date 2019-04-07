@@ -10,10 +10,6 @@ html {
 body {
 }
 
-::-webkit-scrollbar {
-  display: none;
-}
-
 /* ====================== Restaurants Main Page ====================== */
 /**** Start App ****/
 .app {
@@ -83,6 +79,29 @@ body {
     margin-bottom: 30px;
 }
 
+.main-content .searchHeader {
+    display: flex;
+    /* background: #777; */
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.main-content .searchHeader h2 {
+    margin: 0;
+}
+
+.main-content .searchHeader input {
+    border: 0;
+    border-bottom: 1px solid #b6b6b6;
+    color: #888;
+    font-size: 0.95rem;
+    padding: 5px 0;
+}
+
+.main-content .searchHeader input:focus {
+    outline: none;
+}
+
 .main-content .bookShelf {
     /* background: pink; */
     display: flex;
@@ -106,6 +125,9 @@ body {
     /* background: #eee; */
     width: 128px;
     height: 193px;
+    background-size: cover;
+    /* background-size: contain; */
+    background-repeat: no-repeat
 }
 
 .main-content .bookShelf .book .book-top .book-shelf-changer {
@@ -162,6 +184,33 @@ body {
     color: aquamarine;
     font-weight: bold;
     text-decoration: underline;
+}
+
+.main-content .bookShelf .warning {
+    background-color: #ffecec;
+    width: 100%;
+    margin: 0 0 20px;
+    padding: 20px;
+    font-size: 0.9rem;
+    color: #444;
+}
+
+.main-content .bookShelf .suggestions {
+    background-color: #eff8fa;
+    width: 100%;
+    margin: 0 0 20px;
+    padding: 20px;
+    font-size: 0.9rem;
+    color: #444;
+}
+
+.main-content .bookShelf .suggestions ul {
+    list-style: disc;
+    padding: 15px 0 0 40px;
+}
+
+.main-content .bookShelf .suggestions ul li {
+    margin: 0 0 5px;
 }
 
 .main-content .loader {

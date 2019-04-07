@@ -3,6 +3,7 @@ import * as BooksAPI from './BooksAPI'
 import { Route } from 'react-router-dom';
 import './App.css'
 import SideMenu from './components/SideMenu';
+import Search from './components/Search';
 import Loader from './components/Loader';
 import BookShelf from './components/BookShelf';
 
@@ -27,7 +28,7 @@ class BooksApp extends React.PureComponent {
     BooksAPI.getAll().then((books) => {
       this.setState({ books });
       this.hideLoader();
-      console.log(this.state.books);
+      // console.log(this.state.books);
     });
   }
 
@@ -60,9 +61,7 @@ class BooksApp extends React.PureComponent {
             <BookShelf title='Read' shelf='read' books={this.state.books} onUpdateShelf={this.updateShelf} />
           )} />
           <Route path="/search" render={() => (
-            <React.Fragment>
-              <h2>Search</h2>
-            </React.Fragment>
+            <Search ownedBooks={this.state.books} onUpdateShelf={this.updateShelf} />
           )} />
           <Loader />
         </div>
