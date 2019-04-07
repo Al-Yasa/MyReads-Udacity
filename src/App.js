@@ -1,18 +1,18 @@
 import React from 'react'
+import { Route } from 'react-router-dom'
 import * as BooksAPI from './BooksAPI'
-import { Route } from 'react-router-dom';
 import './App.css'
-import SideMenu from './components/SideMenu';
-import Search from './components/Search';
-import Loader from './components/Loader';
-import BookShelf from './components/BookShelf';
+import SideMenu from './components/SideMenu'
+import Loader from './components/Loader'
+import BookShelf from './components/BookShelf'
+import Search from './components/Search'
 
 class BooksApp extends React.PureComponent {
   state = {
     books: []
   }
 
-  componentDidMount() {
+  componentWillMount() {
     this.fetchBooks();
   }
 

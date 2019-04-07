@@ -1,4 +1,5 @@
-import React from 'react';
+import React from 'react'
+import PropTypes from 'prop-types'
 
 const Book = (props) => (
     <div className="book">
@@ -29,5 +30,10 @@ const Book = (props) => (
         ))}
     </div>
 )
+
+Book.propTypes= {
+    book: PropTypes.object.isRequired,
+    onUpdateShelf: PropTypes.func.isRequired
+}
 
 export default Book;

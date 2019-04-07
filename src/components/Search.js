@@ -1,9 +1,19 @@
-import React from 'react';
-import Book from './Book';
+import React from 'react'
+import Book from './Book'
 import * as BooksAPI from '../BooksAPI'
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom'
+import PropTypes from 'prop-types'
 
 class Search extends React.PureComponent {
+    static propTypes = {
+        query: PropTypes.number,
+        searchedBooks: PropTypes.array,
+        noResult: PropTypes.bool,
+
+        ownedBooks: PropTypes.arrayOf(PropTypes.object).isRequired,
+        onUpdateShelf: PropTypes.func.isRequired
+    }
+
     state = {
         query: '',
         searchedBooks: [],
@@ -26,14 +36,14 @@ class Search extends React.PureComponent {
             BooksAPI.search(query).then(books => {
                 if (books.length > 0) {
                     let trimmedBooks = books.map(book => {
-                        this.props.ownedBooks.map(ownedBook => {
+                        this.props.ownedBooks.forEach((ownedBook) => {
                             if (book.id === ownedBook.id) {
                                 book.shelf = ownedBook.shelf;
                             }
                             if (!book.shelf) {
                                 book.shelf = 'none';
                             }
-                        })
+                        });
                         return book;
                     })
                     this.setState({ searchedBooks: trimmedBooks, noResult: false })

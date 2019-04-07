@@ -1,8 +1,15 @@
-import React from 'react';
-import Book from './Book';
-import EmptyMessage from './EmptyMessage';
+import React from 'react'
+import Book from './Book'
+import EmptyMessage from './EmptyMessage'
+import PropTypes from 'prop-types'
 
 class BookShelf extends React.PureComponent {
+  static propTypes = {
+    title: PropTypes.string.isRequired,
+    shelf: PropTypes.oneOf(['currentlyReading', 'wantToRead', 'read']).isRequired,
+    books: PropTypes.arrayOf(PropTypes.object).isRequired,
+    onUpdateShelf: PropTypes.func.isRequired
+  }
 
   updateShelf = (book, shelf) =>  {
     this.props.onUpdateShelf(book, shelf);

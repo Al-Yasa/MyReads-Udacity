@@ -1,5 +1,6 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from 'react'
+import { Link } from 'react-router-dom'
+import PropTypes from 'prop-types'
 
 const EmptyMessage = (props) => (
     <React.Fragment>
@@ -10,5 +11,9 @@ const EmptyMessage = (props) => (
         </div>
     </React.Fragment>
 )
+
+EmptyMessage.propTypes= {
+    title: PropTypes.string.isRequired
+}
 
 export default EmptyMessage;
