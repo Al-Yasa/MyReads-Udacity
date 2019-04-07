@@ -58,7 +58,7 @@ class Search extends React.Component {
                 />
             </div>
             <div className="bookShelf">
-                {this.state.searchedBooks &&
+                {(this.state.searchedBooks && this.state.query) &&
                     this.state.searchedBooks.map(book => (<Book book={book} key={book.id} onUpdateShelf={this.updateShelf} />))
                 }
                 {this.state.noResult && (
