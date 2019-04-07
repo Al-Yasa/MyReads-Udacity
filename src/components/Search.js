@@ -1,8 +1,9 @@
 import React from 'react';
 import Book from './Book';
 import * as BooksAPI from '../BooksAPI'
+import { Link } from 'react-router-dom';
 
-class Search extends React.Component {
+class Search extends React.PureComponent {
     state = {
         query: '',
         searchedBooks: [],
@@ -76,7 +77,7 @@ class Search extends React.Component {
                 {!this.state.query && (
                     <React.Fragment>
                         <p className="empty">You have {this.props.ownedBooks.length} book{this.props.ownedBooks.length === 1 ? '' : 's'} in your bookshelf</p>
-                        <p className="empty">Get more by searching above!</p>
+                        <p className="empty">Get more by searching above! or check your bookshelf <Link to="/">here</Link></p>
                     </React.Fragment>
                 )}
             </div>
