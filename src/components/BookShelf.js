@@ -4,10 +4,6 @@ import EmptyMessage from './EmptyMessage';
 
 class BookShelf extends React.PureComponent {
 
-  componentDidMount() {
-    // console.log(this.props.books);
-  }
-
   updateShelf = (book, shelf) =>  {
     this.props.onUpdateShelf(book, shelf);
   }
@@ -19,9 +15,9 @@ class BookShelf extends React.PureComponent {
           <React.Fragment>
             <h2>{this.props.title}</h2>
             <div className="bookShelf">
-              { this.props.books
+              {this.props.books
                   .filter(book => book.shelf === this.props.shelf)
-                  .map((book, index) => (<Book book={book} key={index} onUpdateShelf={this.updateShelf} />))
+                  .map((book) => (<Book book={book} key={book.id} onUpdateShelf={this.updateShelf} />))
               }
             </div>
           </React.Fragment>
