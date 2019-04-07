@@ -1,6 +1,6 @@
 import React from 'react'
 import Book from './Book'
-import EmptyMessage from './EmptyMessage'
+import Message from './Message'
 import PropTypes from 'prop-types'
 
 class BookShelf extends React.PureComponent {
@@ -30,10 +30,10 @@ class BookShelf extends React.PureComponent {
           </React.Fragment>
         )
       } else {
-        return (<EmptyMessage title={this.props.title} />)
+        return (<Message title={this.props.title} />)
       }
     } else {
-      return (<EmptyMessage title={this.props.title} />)
+      return (<Message title={this.props.title} />)
     }
   }
 }

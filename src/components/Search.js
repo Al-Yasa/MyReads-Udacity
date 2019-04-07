@@ -1,7 +1,7 @@
 import React from 'react'
-import Book from './Book'
 import * as BooksAPI from '../BooksAPI'
-import { Link } from 'react-router-dom'
+import Book from './Book'
+import Message from './Message'
 import PropTypes from 'prop-types'
 
 class Search extends React.PureComponent {
@@ -72,24 +72,8 @@ class Search extends React.PureComponent {
                 {(this.state.searchedBooks && this.state.query) &&
                     this.state.searchedBooks.map(book => (<Book book={book} key={book.id} onUpdateShelf={this.updateShelf} />))
                 }
-                {this.state.noResult && (
-                    <React.Fragment>
-                        <div className="warning">Your search did not match any books.</div>
-                        <div className="suggestions">Suggestions:
-                            <ul>
-                                <li>Make sure all words are spelled correctly.</li>
-                                <li>Try more general keywords.</li>
-                                <li>Try different keywords.</li>
-                            </ul>
-                        </div>
-                    </React.Fragment>
-                )}
-                {!this.state.query && (
-                    <React.Fragment>
-                        <p className="empty">You have {this.props.ownedBooks.length} book{this.props.ownedBooks.length === 1 ? '' : 's'} in your bookshelf</p>
-                        <p className="empty">Get more by searching above! or check your bookshelf <Link to="/">here</Link></p>
-                    </React.Fragment>
-                )}
+                {this.state.noResult && (<Message title="noResults" />)}
+                {!this.state.query && (<Message title="search" ownedBooks={this.props.ownedBooks} />)}
             </div>
         </React.Fragment>
     )
