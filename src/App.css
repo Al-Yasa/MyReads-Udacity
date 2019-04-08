@@ -174,7 +174,7 @@
     height: 40px;
     border-radius: 50%;
     background: #4ea48d;
-    background-image: url(./icons/arrow-drop-down.svg);
+    background-image: url('./icons/arrow-drop-down.svg');
     background-repeat: no-repeat;
     background-position: center;
     background-size: 25px;
@@ -183,7 +183,7 @@
 
 .main-content .bookShelf .book .book-top .book-shelf-changer:hover {
     background: #56af97;
-    background-image: url(./icons/arrow-drop-down.svg);
+    background-image: url('./icons/arrow-drop-down.svg');
     background-repeat: no-repeat;
     background-position: center;
     background-size: 35px;
