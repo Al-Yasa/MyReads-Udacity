@@ -17,14 +17,6 @@ const SideMenu = () => (
         <li><NavLink to="/read" activeClassName="current" >Read</NavLink></li>
         <li><NavLink to="/search" activeClassName="current" >Search</NavLink></li>
       </ul>
-      {/* <h3>BOOK CIRCLES</h3>
-      <ul>
-        <li></li>
-      </ul>
-      <h3>BOOKMARKS</h3>
-      <ul>
-        <li></li>
-      </ul> */}
     </div>
   </div>
 )

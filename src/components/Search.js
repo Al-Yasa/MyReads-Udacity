@@ -9,7 +9,6 @@ class Search extends React.PureComponent {
         query: PropTypes.number,
         searchedBooks: PropTypes.array,
         noResult: PropTypes.bool,
-
         ownedBooks: PropTypes.arrayOf(PropTypes.object).isRequired,
         onUpdateShelf: PropTypes.func.isRequired
     }
@@ -23,24 +22,24 @@ class Search extends React.PureComponent {
     updateShelf = (book, shelf) =>  {
         this.props.onUpdateShelf(book, shelf);
         book.shelf = shelf;
-    }
+    };
 
     updateQuery = (query) => {
         this.setState({ query: query }, () => {
             this.searchBooks(this.state.query.trim());
         });
-    }
+    };
 
     searchBooks = (query) => {
         if (this.state.query) {
             BooksAPI.search(query).then(books => {
                 if (books.length > 0) {
-                    let trimmedBooks = books.map(book => {
-                        this.props.ownedBooks.forEach((ownedBook) => {
-                            if (book.id === ownedBook.id) {
+                    let trimmedBooks = books.map(book => { // we need to modify the books we get from the API
+                        this.props.ownedBooks.forEach((ownedBook) => { // loop through our already owned books
+                            if (book.id === ownedBook.id) { // if we own the book we searched for then give it the same shelf as our owned book
                                 book.shelf = ownedBook.shelf;
                             }
-                            if (!book.shelf) {
+                            if (!book.shelf) { // if we don't own the book we searched for then give it a shelf of 'none'
                                 book.shelf = 'none';
                             }
                         });
@@ -54,7 +53,7 @@ class Search extends React.PureComponent {
         } else {
             this.setState({ query: '', searchedBooks: [], noResult: false });
         }
-    }
+    };
 
   render() {
     return (

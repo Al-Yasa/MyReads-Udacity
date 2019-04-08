@@ -13,7 +13,7 @@ class BookShelf extends React.PureComponent {
 
   updateShelf = (book, shelf) =>  {
     this.props.onUpdateShelf(book, shelf);
-  }
+  };
 
   render() {
     if (this.props.books.length) {
