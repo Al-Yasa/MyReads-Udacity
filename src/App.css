@@ -20,7 +20,7 @@
 }
 
 .side-content .logo {
-    background-image: url(./imgs/bookpage.jpg);
+    background-image: url('./imgs/bookPage.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     height: 150px;
