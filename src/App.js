@@ -12,7 +12,7 @@ class BooksApp extends React.PureComponent {
     books: []
   }
 
-  componentWillMount() {
+  componentDidMount() {
     this.fetchBooks();
   }
 
