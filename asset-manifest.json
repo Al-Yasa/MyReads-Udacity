@@ -1,7 +1,7 @@
 {
   "main.css": "/MyReads-Udacity/static/css/main.7331ce32.chunk.css",
-  "main.js": "/MyReads-Udacity/static/js/main.72988254.chunk.js",
-  "main.js.map": "/MyReads-Udacity/static/js/main.72988254.chunk.js.map",
+  "main.js": "/MyReads-Udacity/static/js/main.5aa6c6cf.chunk.js",
+  "main.js.map": "/MyReads-Udacity/static/js/main.5aa6c6cf.chunk.js.map",
   "static/js/1.7d2f23dd.chunk.js": "/MyReads-Udacity/static/js/1.7d2f23dd.chunk.js",
   "static/js/1.7d2f23dd.chunk.js.map": "/MyReads-Udacity/static/js/1.7d2f23dd.chunk.js.map",
   "runtime~main.js": "/MyReads-Udacity/static/js/runtime~main.d182a2eb.js",
@@ -9,6 +9,6 @@
   "static/css/main.7331ce32.chunk.css.map": "/MyReads-Udacity/static/css/main.7331ce32.chunk.css.map",
   "static/media/App.css": "/MyReads-Udacity/static/media/bookPage.b3944ebd.jpg",
   "index.html": "/MyReads-Udacity/index.html",
-  "precache-manifest.d92398faaf3b5e770a5b8023d46fe2e0.js": "/MyReads-Udacity/precache-manifest.d92398faaf3b5e770a5b8023d46fe2e0.js",
+  "precache-manifest.32ed9e9cebf905c70f356c64c1124a67.js": "/MyReads-Udacity/precache-manifest.32ed9e9cebf905c70f356c64c1124a67.js",
   "service-worker.js": "/MyReads-Udacity/service-worker.js"
 }
