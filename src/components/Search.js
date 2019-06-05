@@ -16,7 +16,8 @@ class Search extends React.PureComponent {
     state = {
         query: '',
         searchedBooks: [],
-        noResult: false
+        noResult: false,
+        timeId: null
     }
 
     updateShelf = (book, shelf) =>  {
@@ -24,10 +25,10 @@ class Search extends React.PureComponent {
         book.shelf = shelf;
     };
 
-    updateQuery = (query) => {
-        this.setState({ query: query }, () => {
+    updateQuery = (e) => {
+        this.setState({ query: e.target.value }, this.debounce(() => {
             this.searchBooks(this.state.query.trim());
-        });
+        }, 500));
     };
 
     searchBooks = (query) => {
@@ -55,28 +56,39 @@ class Search extends React.PureComponent {
         }
     };
 
-  render() {
-    return (
-        <React.Fragment>
-            <div className="searchHeader">
-                <h2>Search</h2>
-                <input
-                    type="text"
-                    placeholder="Search all books"
-                    value={this.state.query}
-                    onChange={(e) => this.updateQuery(e.target.value)}
-                />
-            </div>
-            <div className="bookShelf">
-                {(this.state.searchedBooks && this.state.query) &&
-                    this.state.searchedBooks.map(book => (<Book book={book} key={book.id} onUpdateShelf={this.updateShelf} />))
-                }
-                {this.state.noResult && (<Message title="noResults" />)}
-                {!this.state.query && (<Message title="search" ownedBooks={this.props.ownedBooks} />)}
-            </div>
-        </React.Fragment>
-    )
-  }
+    debounce = (func, wait) => {
+        return (...args) => {
+            if (this.state.timeId) {clearTimeout(this.state.timeId);}
+            this.setState(state => {
+                state.timeId = setTimeout(() => {
+                    func(...args);
+                }, wait)
+            })
+        }
+    };
+
+    render() {
+        return (
+            <React.Fragment>
+                <div className="searchHeader">
+                    <h2>Search</h2>
+                    <input
+                        type="text"
+                        placeholder="Search all books"
+                        value={this.state.query}
+                        onChange={(e) => this.updateQuery(e)}
+                    />
+                </div>
+                <div className="bookShelf">
+                    {(this.state.searchedBooks && this.state.query) &&
+                        this.state.searchedBooks.map(book => (<Book book={book} key={book.id} onUpdateShelf={this.updateShelf} />))
+                    }
+                    {this.state.noResult && (<Message title="noResults" />)}
+                    {!this.state.query && (<Message title="search" ownedBooks={this.props.ownedBooks} />)}
+                </div>
+            </React.Fragment>
+        )
+    }
 }
 
 export default Search
