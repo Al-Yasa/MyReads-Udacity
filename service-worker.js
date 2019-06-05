@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/MyReads-Udacity/precache-manifest.7977b6b3122d83e180c8b811988d55e8.js"
+  "/MyReads-Udacity/precache-manifest.a88002ee774306af9dec9ccaa3c28e00.js"
 );
 
 workbox.clientsClaim();
