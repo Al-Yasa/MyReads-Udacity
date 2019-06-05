@@ -12,19 +12,19 @@ self.__precacheManifest = [
     "url": "/MyReads-Udacity/static/js/runtime~main.d182a2eb.js"
   },
   {
-    "revision": "6dde4f79893696a07576",
-    "url": "/MyReads-Udacity/static/js/main.6dde4f79.chunk.js"
+    "revision": "ff24975b58cc7bfbd063",
+    "url": "/MyReads-Udacity/static/js/main.ff24975b.chunk.js"
   },
   {
     "revision": "7d2f23ddbec356443373",
     "url": "/MyReads-Udacity/static/js/1.7d2f23dd.chunk.js"
   },
   {
-    "revision": "6dde4f79893696a07576",
+    "revision": "ff24975b58cc7bfbd063",
     "url": "/MyReads-Udacity/static/css/main.7331ce32.chunk.css"
   },
   {
-    "revision": "cf915d30547149b2956b2f4377d595cc",
+    "revision": "ee332315739d6b13da3243cb1f39bc4d",
     "url": "/MyReads-Udacity/index.html"
   }
 ];
