@@ -7,7 +7,7 @@ const Book = (props) => (
             {props.book.imageLinks ? (
                 <div className="book-cover" style={{ backgroundImage: `url(${props.book.imageLinks.thumbnail})` }}></div>
             ) : ( // if book has no image then give it a missing thumbnail image
-                <div className="book-cover" style={{ backgroundImage: 'url(missingthumbnail.jpg)' }}></div>
+                <div className="book-cover" style={{ backgroundImage: 'url(missingThumbnail.jpg)' }}></div>
             )}
             <div className="book-shelf-changer">
                 <select
